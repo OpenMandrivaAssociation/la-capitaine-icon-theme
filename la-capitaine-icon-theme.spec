@@ -12,8 +12,8 @@ URL: https://krourke.org/projects/art/la-capitaine-icon-theme
 Source0: https://github.com/keeferrourke/la-capitaine-icon-theme/archive/v%{version}/%{name}-%{version}.tar.gz
 
 Requires: adwaita-icon-theme
-Requires: gnome-icon-theme
 Requires: hicolor-icon-theme
+Recommends: gnome-icon-theme
 
 %description
 La Capitaine is an icon pack — designed to integrate with most desktop
