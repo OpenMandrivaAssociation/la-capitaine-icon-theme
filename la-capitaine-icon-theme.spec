@@ -1,18 +1,15 @@
-%global giturl https://github.com/keeferrourke/%{name}
 %global themename La-Capitaine
 
 Name: la-capitaine-icon-theme
 Version: 0.6.2
-Release: 2%{?dist}
+Release: 1
 Summary: Icon pack designed to integrate with most desktop environments
 BuildArch: noarch
 
 # For a breakdown of the licensing, see COPYING and LICENSE
 License: GPLv3+ and MIT
 URL: https://krourke.org/projects/art/la-capitaine-icon-theme
-Source0: %{giturl}/archive/v%{version}/%{name}-%{version}.tar.gz
-
-BuildRequires: redhat-lsb-core
+Source0: https://github.com/keeferrourke/la-capitaine-icon-theme/archive/v%{version}/%{name}-%{version}.tar.gz
 
 Requires: adwaita-icon-theme
 Requires: gnome-icon-theme
@@ -24,14 +21,11 @@ environments. The set of icons takes inspiration from the latest iterations of
 macOS and Google's Material Design through the use of visually pleasing
 gradients, shadowing, and simple icon geometry.
 
-
 %prep
 %autosetup -p1
 
-
 %build
 %configure
-
 
 %install
 mkdir -p %{buildroot}%{_datadir}/icons/%{themename}
@@ -58,7 +52,6 @@ gtk-update-icon-cache --force %{_datadir}/icons/%{themename} &>/dev/null || :
 %transfiletriggerpostun -- %{_datadir}/icons/%{themename}
 gtk-update-icon-cache --force %{_datadir}/icons/%{themename} &>/dev/null || :
 
-
 %files
 %license COPYING LICENSE
 %doc README.md Credits.md Thanks.md
@@ -75,46 +68,3 @@ gtk-update-icon-cache --force %{_datadir}/icons/%{themename} &>/dev/null || :
 %{_datadir}/icons/%{themename}/status/
 %dir %{_datadir}/icons/%{themename}
 %ghost %{_datadir}/icons/%{themename}/icon-theme.cache
-
-
-%changelog
-* Thu Jul 22 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.6.2-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
-
-* Sun Apr 25 2021 Artem Polishchuk <ego.cordatus@gmail.com> - 0.6.2-1
-- build(update): 0.6.2
-
-* Sat Apr 24 2021 Artem Polishchuk <ego.cordatus@gmail.com> - 0.6.1-12.20210424gitd49ef94
-- build(update): d49ef94 commit
-
-* Sat Apr 17 2021 Artem Polishchuk <ego.cordatus@gmail.com> - 0.6.1-11.20210331git1add5ba
-- build(update): 1add5ba commit
-  fix: RH#1950614
-
-* Tue Jan 26 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.6.1-10.20200922git9564606
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
-
-* Sun Sep 27 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 0.6.1-9.20200922git9564606
-- Update to latest git snapshot
-- build: remove fdupes
-
-* Tue Jul 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.6.1-8.20200414git36b9768
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
-
-* Mon Jun 01 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 0.6.1-7.20200414git36b9768
-- Update to latest git snapshot
-
-* Wed Jan 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.6.1-6.20200105git90b4015
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
-
-* Sun Jan 05 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 0.6.1-5.20200105git90b4015
-- Update to latest git snapshot
-
-* Fri Sep 13 2019 Artem Polishchuk <ego.cordatus@gmail.com> - 0.6.1-4.20190904gitef79681
-- Update to latest git snapshot
-
-* Thu Jul 25 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.6.1-3.20190418gitbc48265
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
-
-* Sun Apr 21 2019 Artem Polishchuk <ego.cordatus@gmail.com> - 0.6.1-2.20190418gitbc48265
-- Initial package
