@@ -2,7 +2,7 @@
 
 Name: la-capitaine-icon-theme
 Version: 0.6.2
-Release: 1
+Release: 2
 Summary: Icon pack designed to integrate with most desktop environments
 BuildArch: noarch
 
