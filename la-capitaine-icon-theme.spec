@@ -15,6 +15,11 @@ Requires: adwaita-icon-theme
 Requires: hicolor-icon-theme
 Recommends: gnome-icon-theme
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 La Capitaine is an icon pack — designed to integrate with most desktop
 environments. The set of icons takes inspiration from the latest iterations of
